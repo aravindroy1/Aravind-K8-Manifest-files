@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: retail-app
+  namespace: aravind-ns
+  labels:
+    app: retail-app
+spec:
+  containers:
+    - name: retail-app-container
+      image: muralisocial123/retail-app:v1.0.0
+      ports:
+        - containerPort: 8080
