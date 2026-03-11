@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ey-cart-rs
+  namespace: aravind-ns
+  labels:
+    app: cart
+spec: #It defines the behaviour of the ReplicaSet, such as how many replicas to maintain and the template for the pods it manages.
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: ey-cart-container
+          image: muralisocial123/ey-cart:v1.1.0
+          ports:
+            - containerPort: 3000
