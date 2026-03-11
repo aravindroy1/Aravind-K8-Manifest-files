@@ -3,3 +3,11 @@ kind: Pod
 metadata:
   name: ey-cart-pod
   namespace: aravind-ns
+  labels:
+    app: ey-cart-app
+spec:
+  containers:
+    - name: ey-cart-container
+      image: muralisocial123/ey-cart:v1.1.0
+      ports:
+        - containerPort: 3000
