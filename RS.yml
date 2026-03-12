@@ -16,7 +16,7 @@ spec: #It defines the behaviour of the ReplicaSet, such as how many replicas to 
         app: web
     spec:
       containers:
-        - name: ey-cart-container
-          image: muralisocial123/ey-cart:v1.1.0
+        - name: flipkart-app-container
+          image: muralisocial123/flipkart-app-web:v1.1.0
           ports:
             - containerPort: 3000
