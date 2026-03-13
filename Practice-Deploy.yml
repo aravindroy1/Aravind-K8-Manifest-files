@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Practice-Deploy
+  namespace: aravind-ns
+  labels:
+    app: practice-app
+spec:
+  replicas: 8
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 2
+
+  selector:
+    matchLabels:
+      app: Web
+
+  template:
+    metadata:
+      labels:
+        app: Web
+    spec:
+      containers:
+      - name: practice-container
+        image: muralisocial123/fitness-app:v1.0.1
+        ports:
+        - containerPort: 3000
