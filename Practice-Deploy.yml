@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Practice-Deploy
+  name: practice-deploy
   namespace: aravind-ns
   labels:
     app: practice-app
@@ -28,3 +28,4 @@ spec:
         image: muralisocial123/fitness-app:v1.0.1
         ports:
         - containerPort: 3000
+ 
