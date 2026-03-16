@@ -28,7 +28,13 @@ spec:
         image: muralisocial123/fitness-app:v1.0.1
         ports:
         - containerPort: 3000
- 
+        resources:
+          limits:
+            memory: "250Mi"
+            cpu: "200m"
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
 
 ---
 
